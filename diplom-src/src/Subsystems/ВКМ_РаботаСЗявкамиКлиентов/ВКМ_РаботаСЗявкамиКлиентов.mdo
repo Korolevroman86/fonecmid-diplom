@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f6ab30d4-8360-4891-9baf-2f14cc03892d">
+  <name>ВКМ_РаботаСЗявкамиКлиентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВКМ работа с зявками клиентов</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+</mdclass:Subsystem>

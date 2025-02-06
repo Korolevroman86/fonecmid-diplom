@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7afaa1b2-3519-4ee8-b9f4-c8cc20bcd534">
+  <producedTypes>
+    <selectionType typeId="992e27ba-80a3-4442-8d8b-97e78a072ed6" valueTypeId="192236d7-8bcd-4665-8834-3ac34ae7cb46"/>
+    <listType typeId="21fd275a-468f-4342-b8c0-d8955ed8e604" valueTypeId="036a9647-8f86-45ca-b602-3f8c62f16260"/>
+    <managerType typeId="f8476812-286e-40be-a75f-4dc73bd7a3e6" valueTypeId="1fdf7645-b9a5-486f-bd15-fa3c58e1efcc"/>
+    <recordSetType typeId="1fb17948-11b5-4b58-b8d8-f201807b2111" valueTypeId="8743da9b-f903-4317-92a0-b14433444498"/>
+    <recordKeyType typeId="62125f6d-5409-4b9a-ad82-c95c6fad7f16" valueTypeId="13ea33dc-7eed-483c-a939-4d21f70f60e6"/>
+    <recordType typeId="4475217b-121a-42cf-bc15-46092b7c7d50" valueTypeId="ff529606-0dde-4b68-aff9-89135ded25c7"/>
+    <recordManagerType typeId="5f351fbc-f7c6-4754-a1f7-eae1f4c47782" valueTypeId="ae6c89b9-73aa-4eb0-8cca-384864ca1a4b"/>
+  </producedTypes>
+  <name>ВКМ_ПринятыеУволенныеСотрудники</name>
+  <synonym>
+    <key>ru</key>
+    <value>Принятые уволенные сотрудники</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Принятый уволенный сотрудник</value>
+  </recordPresentation>
+  <resources uuid="d0ff27b8-7b7e-46d7-859a-12fad31acc30">
+    <name>ПринятУволен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принят уволен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="096a2302-c06f-4298-9596-283271fd378d">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВКМ_ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceForm>Catalog.ВКМ_ФизическиеЛица.Form.ФормаВыбораСотрудника</choiceForm>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

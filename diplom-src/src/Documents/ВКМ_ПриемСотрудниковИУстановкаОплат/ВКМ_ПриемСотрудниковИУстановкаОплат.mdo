@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="532bde80-17de-4964-8ee6-25179e05f1ee">
+  <producedTypes>
+    <objectType typeId="5802b295-ce76-43fa-a593-b1a4c09a56ed" valueTypeId="650320b4-7421-495f-823d-7c2db1a75d7e"/>
+    <refType typeId="74d12ebd-b8c4-4754-8b69-f079fda01940" valueTypeId="ce5b1bc1-e9a2-4fe0-a561-be4107768746"/>
+    <selectionType typeId="450b0183-3dd3-40a4-b6f4-7a9b4f6a3f28" valueTypeId="7952b008-b0d5-498e-96fd-f49aa2824fe9"/>
+    <listType typeId="c53ff2a8-2113-412c-8722-9b20394799c6" valueTypeId="188a386d-009c-478f-8842-7538b8ccec4e"/>
+    <managerType typeId="0509b33e-c16c-4ddb-ac21-74affcf1af7e" valueTypeId="932cf2e2-f022-4e59-8860-45429fc7863f"/>
+  </producedTypes>
+  <name>ВКМ_ПриемСотрудниковИУстановкаОплат</name>
+  <synonym>
+    <key>ru</key>
+    <value>Прием сотрудников и установка оплат</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВКМ_ПриемСотрудниковИУстановкаОплат.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Прием сотрудников и установка оплат</value>
+  </objectPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ВКМ_ПриемСотрудниковИУстановкаОплат.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.ВКМ_ПринятыеУволенныеСотрудники</registerRecords>
+  <registerRecords>InformationRegister.ВКМ_УсловияОплатыСотрудников</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="8b722660-4f35-4289-a842-a293246ca3be">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7938164a-ff84-48ab-b7ac-489487add9da">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c599e4ec-9732-4f91-a420-92a81cb29de8">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="b19a7a38-da3e-444e-91f4-c8a9bb72eedf">
+    <producedTypes>
+      <objectType typeId="c864dba1-bfb5-4853-8452-3b0ce2f91438" valueTypeId="3cd5a055-af74-43c0-9827-7d5f4f0b533d"/>
+      <rowType typeId="d6ef1c99-5693-415d-ae0d-c3d41ea4c090" valueTypeId="fe8318ab-f371-4be4-a2cd-ab1099ea4263"/>
+    </producedTypes>
+    <name>Сотрудники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <attributes uuid="66facb0c-14f2-437a-be6e-d502af775d12">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВКМ_ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceForm>Catalog.ВКМ_ФизическиеЛица.Form.ФормаВыбораСотрудника</choiceForm>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="92c8346d-c6d6-4871-8b5c-36e66854208c">
+      <name>Оклад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оклад</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="51a8cb86-e6fb-4bfc-ad77-4ebe6b054de6">
+      <name>ПроцентОтРабот</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент от работ</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:StringValue">
+        <value>0</value>
+      </minValue>
+      <maxValue xsi:type="core:StringValue">
+        <value>99</value>
+      </maxValue>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

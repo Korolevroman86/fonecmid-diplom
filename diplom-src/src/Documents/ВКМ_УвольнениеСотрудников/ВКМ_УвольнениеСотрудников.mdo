@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="18e609ee-a0c2-4b30-bca0-95a1833354f6">
+  <producedTypes>
+    <objectType typeId="7390c642-bef1-46b4-b975-6fdad45b6394" valueTypeId="141e5a3a-34ec-4959-9284-2c2704577230"/>
+    <refType typeId="76a81aa4-e804-4511-97e7-caa676e882ec" valueTypeId="34536728-fa34-4d5f-b723-0d8898dc9a30"/>
+    <selectionType typeId="937b9ec6-5a61-41e5-9daa-e8e8d95b85d5" valueTypeId="81a32e9f-26b3-4402-9bf6-cfca1ecbdb94"/>
+    <listType typeId="9020de08-e001-4854-a9f1-985df74893c4" valueTypeId="8f4ec2e7-1e59-4b9a-90e9-b8c6b70b4d6f"/>
+    <managerType typeId="c4814b9c-03fc-4451-85cd-60fe5fb28a12" valueTypeId="c3392ad7-bcb6-4e9d-a923-7325ee5a96a1"/>
+  </producedTypes>
+  <name>ВКМ_УвольнениеСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Увольнение сотрудников</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВКМ_УвольнениеСотрудников.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Увольнение сотрудников</value>
+  </objectPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ВКМ_УвольнениеСотрудников.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.ВКМ_ПринятыеУволенныеСотрудники</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="9cd6ea38-429b-498f-a731-c6db3314a099">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7bdf8e1a-e4db-4583-9b18-9888644fe450">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="1992b9f5-d7da-425a-9c1a-d5955589a4ff">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="b029d3ac-5adb-4186-a171-3fcf0a1b64d5">
+    <producedTypes>
+      <objectType typeId="9f05a28e-e1d1-42d5-bd49-ebe1d340323d" valueTypeId="3ae2f36a-f9b0-406f-9995-94fddda34b52"/>
+      <rowType typeId="667d94c3-2c21-498a-a2dd-cd61e83b0279" valueTypeId="91f7c1c4-65be-4eea-af0e-354c09498984"/>
+    </producedTypes>
+    <name>Сотрудники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <attributes uuid="67e9c8a8-0342-43db-a23b-ba632ccef625">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВКМ_ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceForm>Catalog.ВКМ_ФизическиеЛица.Form.ФормаВыбораСотрудника</choiceForm>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

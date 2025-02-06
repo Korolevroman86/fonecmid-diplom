@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейОтпускаВГоду</dataPath>
+			<field>ДнейОтпускаВГоду</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней отпуска в году</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачалоОтпуска</dataPath>
+			<field>НачалоОтпуска</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начало отпуска</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонецОтпуска</dataPath>
+			<field>КонецОтпуска</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конец отпуска</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокДнейОтпуска</dataPath>
+			<field>ОстатокДнейОтпуска</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток дней отпуска</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейОтпуска</dataPath>
+			<field>ДнейОтпуска</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней отпуска</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактическиОтгуленныйОтпуск</dataPath>
+			<field>ФактическиОтгуленныйОтпуск</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактически отгуленный отпуск</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактическиНеОтгуленныйОтпуск</dataPath>
+			<field>ФактическиНеОтгуленныйОтпуск</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактически не отгуленный отпуск</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Оплачиваемый</dataPath>
+			<field>Оплачиваемый</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВКМ_ГрафикОтпусковСрезПоследних.Сотрудник КАК Сотрудник,
+	28 КАК ДнейОтпускаВГоду,
+	ВЫБОР
+		КОГДА ВКМ_ГрафикОтпусковСрезПоследних1.ДатаНачала ЕСТЬ NULL
+			ТОГДА ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала
+		ИНАЧЕ ВЫБОР
+			КОГДА ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала &lt; ВКМ_ГрафикОтпусковСрезПоследних1.ДатаНачала
+				ТОГДА ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала
+		КОНЕЦ
+	КОНЕЦ КАК НачалоОтпуска,
+	ВЫБОР
+		КОГДА ВКМ_ГрафикОтпусковСрезПоследних1.ДатаОкончания ЕСТЬ NULL
+			ТОГДА ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания
+		ИНАЧЕ ВЫБОР
+			КОГДА ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания &lt; ВКМ_ГрафикОтпусковСрезПоследних1.ДатаОкончания
+				ТОГДА ВКМ_ГрафикОтпусковСрезПоследних1.ДатаОкончания
+		КОНЕЦ
+	КОНЕЦ КАК КонецОтпуска,
+	ВЫБОР
+		КОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+			ДЕНЬ) &lt;&gt; 28
+			ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания, ДЕНЬ)
+		ИНАЧЕ 28
+	КОНЕЦ КАК ДнейОтпуска,
+	ВЫБОР
+		КОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+			ДЕНЬ) &lt;&gt; 28
+			ТОГДА 28 - РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+				ДЕНЬ)
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОстатокДнейОтпуска,
+	ВЫБОР
+		КОГДА &amp;ТекущаяДата &lt; ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала
+			ТОГДА 0
+		ИНАЧЕ ВЫБОР
+			КОГДА &amp;ТекущаяДата &lt; ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания
+				ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, &amp;ТекущаяДата, ДЕНЬ)
+			ИНАЧЕ РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания, ДЕНЬ)
+		КОНЕЦ
+	КОНЕЦ КАК ФактическиОтгуленныйОтпуск,
+	ВЫБОР
+		КОГДА ВЫБОР
+			КОГДА &amp;ТекущаяДата &lt; ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала
+				ТОГДА 0
+			ИНАЧЕ ВЫБОР
+				КОГДА &amp;ТекущаяДата &lt; ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания
+					ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, &amp;ТекущаяДата, ДЕНЬ)
+				ИНАЧЕ РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания, ДЕНЬ)
+			КОНЕЦ
+		КОНЕЦ &lt;&gt; 0
+			ТОГДА ВЫБОР
+				КОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+					ДЕНЬ) &lt;&gt; 28
+					ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+						ДЕНЬ)
+				ИНАЧЕ 28
+			КОНЕЦ + ВЫБОР
+				КОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+					ДЕНЬ) &lt;&gt; 28
+					ТОГДА 28 - РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+						ДЕНЬ)
+				ИНАЧЕ 0
+			КОНЕЦ - ВЫБОР
+				КОГДА &amp;ТекущаяДата &lt; ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала
+					ТОГДА 0
+				ИНАЧЕ ВЫБОР
+					КОГДА &amp;ТекущаяДата &lt; ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания
+						ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, &amp;ТекущаяДата, ДЕНЬ)
+					ИНАЧЕ РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+						ДЕНЬ)
+				КОНЕЦ
+			КОНЕЦ
+		ИНАЧЕ ВЫБОР
+			КОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+				ДЕНЬ) &lt;&gt; 28
+				ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания, ДЕНЬ)
+			ИНАЧЕ 28
+		КОНЕЦ + ВЫБОР
+			КОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+				ДЕНЬ) &lt;&gt; 28
+				ТОГДА 28 - РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
+					ДЕНЬ)
+			ИНАЧЕ 0
+		КОНЕЦ
+	КОНЕЦ КАК ФактическиНеОтгуленныйОтпуск
+ИЗ
+	РегистрСведений.ВКМ_ГрафикОтпусков.СрезПоследних(&amp;Год, Оплачиваемый
+	И Период &gt;= НАЧАЛОПЕРИОДА(&amp;Год, ГОД)) КАК ВКМ_ГрафикОтпусковСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ВКМ_ГрафикОтпусков.СрезПоследних(&amp;Год,
+		НЕ Оплачиваемый
+		И Период &gt;= НАЧАЛОПЕРИОДА(&amp;Год, ГОД)) КАК ВКМ_ГрафикОтпусковСрезПоследних1
+		ПО (ВКМ_ГрафикОтпусковСрезПоследних.Сотрудник = ВКМ_ГрафикОтпусковСрезПоследних1.Сотрудник)</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ТекущаяДата</dataPath>
+		<expression>ТекущаяДата()</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+	</calculatedField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Год</expression>
+		<inputParameters>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=гггг</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<parameter>
+		<name>Год</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Год</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=гггг</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход отпусков</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcsset:userSettingID>2c9cc874-9eaa-45f5-af0e-dd441326a01d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Год</dcscor:parameter>
+					<dcsset:userSettingID>22ca094a-328b-4d5b-a321-3ddce6e2691f</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">SeparatelyAndInTotalsOnly</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сотрудник</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДнейОтпускаВГоду</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Положенный отпуск</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НачалоОтпуска</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата начала отпуска</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КонецОтпуска</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата окончания отпуска</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДнейОтпуска</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заявлено дней отпуска</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОстатокДнейОтпуска</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Расчетный остаток отпуска</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ФактическиОтгуленныйОтпуск</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Фактически дней отгулено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ФактическиНеОтгуленныйОтпуск</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Фактически осталось дней на сегодня</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>ДнейОтпуска</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ДнейОтпускаВГоду</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>КонецОтпуска</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>НачалоОтпуска</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ОстатокДнейОтпуска</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ФактическиНеОтгуленныйОтпуск</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ФактическиОтгуленныйОтпуск</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCalculationTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f258f61c-72d1-47cb-aaba-f0a57025abf5">
+  <producedTypes>
+    <objectType typeId="8fa46fdd-1b27-49e4-9487-b89387c1737c" valueTypeId="d8bab17d-d974-4958-9c5a-12bab60fce21"/>
+    <refType typeId="fef8d7de-0e02-481d-9170-938cc303455e" valueTypeId="cee174cf-1b8e-4dae-bb5e-a53a15b364ef"/>
+    <selectionType typeId="8971acdb-41b3-4d27-a454-6b707876efc8" valueTypeId="9302cf2f-fc29-49f9-a955-0d0b6605c1f2"/>
+    <listType typeId="491fff67-e6f4-4c82-90d3-63b34847dcce" valueTypeId="b39a3a5d-3c11-4296-9174-1d07002224da"/>
+    <managerType typeId="a61d8996-6b63-44b7-90db-7ba829206f4d" valueTypeId="738f30c5-3252-458b-8c8e-8c36dc433063"/>
+    <displacingCalculationTypesType typeId="abd828ce-1792-47e6-b2cb-890bdf1057b8" valueTypeId="575b1d6c-b1fd-4651-bc8e-36d08238a176"/>
+    <displacingCalculationTypesRowType typeId="39415558-f15a-4975-8b60-aa5ef944bc2b" valueTypeId="04165f83-2b1c-4bae-b15e-aca27d653965"/>
+    <baseCalculationTypesType typeId="1a6418d2-5d8a-42cc-976c-0f5a0f009d94" valueTypeId="d5b16c29-b3f1-4830-8c34-6c85278365f4"/>
+    <baseCalculationTypesRowType typeId="a74bbff4-b4e9-45b4-af00-4f145011da89" valueTypeId="6e4770c4-eb42-47a7-8401-c4e4fb09b3e9"/>
+    <leadingCalculationTypesType typeId="432d9f7c-8e46-40d8-b320-73efbd0ae8d2" valueTypeId="96088df5-86ad-4343-a26d-5d3698273369"/>
+    <leadingCalculationTypesRowType typeId="b679a115-ef34-4615-8828-726d1af97cde" valueTypeId="3415e32b-604f-4866-8c43-b6c58fe40b5c"/>
+  </producedTypes>
+  <name>ВКМ_ОсновныеНачисления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Основные начисления</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.StandardAttribute.Code</inputByString>
+  <inputByString>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Основное начисление</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Основные начисления</value>
+  </listPresentation>
+  <codeLength>9</codeLength>
+  <descriptionLength>40</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <dependenceOnCalculationTypes>OnActionPeriod</dependenceOnCalculationTypes>
+  <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</baseCalculationTypes>
+  <actionPeriodUse>true</actionPeriodUse>
+  <predefined>
+    <items id="066ee7a8-94d5-420b-a378-6d0ca9638566">
+      <name>Оклад</name>
+      <description>Оклад</description>
+      <code xsi:type="core:StringValue">
+        <value>00001</value>
+      </code>
+      <displaced>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Отпускные</displaced>
+      <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</leading>
+    </items>
+    <items id="65492e2e-6a2c-4f6e-8898-ad327bf2a7d3">
+      <name>Отпускные</name>
+      <description>Отпускные</description>
+      <code xsi:type="core:StringValue">
+        <value>00002</value>
+      </code>
+      <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</base>
+      <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Отпускные</base>
+      <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.ОплатаЗаВыполненныеРаботы</base>
+      <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</leading>
+    </items>
+    <items id="20a27dd2-6403-4aa3-9ec4-8159cb1abf77">
+      <name>ОплатаЗаВыполненныеРаботы</name>
+      <description>Оплата за выполненные работы</description>
+      <code xsi:type="core:StringValue">
+        <value>00003</value>
+      </code>
+    </items>
+  </predefined>
+</mdclass:ChartOfCalculationTypes>

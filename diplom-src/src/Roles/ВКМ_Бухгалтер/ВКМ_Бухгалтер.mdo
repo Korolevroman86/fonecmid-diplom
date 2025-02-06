@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="886cb599-d4e6-470b-8aad-83d28db81afc">
+  <name>ВКМ_Бухгалтер</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бухгалтер</value>
+  </synonym>
+</mdclass:Role>

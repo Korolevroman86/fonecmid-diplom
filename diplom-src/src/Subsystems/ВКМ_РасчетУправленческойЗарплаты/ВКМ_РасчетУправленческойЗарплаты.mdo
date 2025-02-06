@@ -7,4 +7,34 @@
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
+  <content>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</content>
+  <content>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</content>
+  <content>ChartOfCalculationTypes.ВКМ_Удержания</content>
+  <content>Catalog.ВКМ_ФизическиеЛица</content>
+  <content>InformationRegister.ВКМ_ГрафикРаботы</content>
+  <content>InformationRegister.ВКМ_ПринятыеУволенныеСотрудники</content>
+  <content>InformationRegister.ВКМ_УсловияОплатыСотрудников</content>
+  <content>Enum.ВКМ_ДолжностиСотрудников</content>
+  <content>Document.ВКМ_НачислениеЗаработнойПлаты</content>
+  <content>CommandGroup.ВКМ_Справочники</content>
+  <content>CommandGroup.ВКМ_Документы</content>
+  <content>AccumulationRegister.ВКМ_РаботыВыполненныеСотрудником</content>
+  <content>Document.ВКМ_ПриемСотрудниковИУстановкаОплат</content>
+  <content>Document.ВКМ_УвольнениеСотрудников</content>
+  <content>DataProcessor.ЗаполнениеГрафикаРаботы</content>
+  <content>CalculationRegister.ВКМ_Удержания</content>
+  <content>Document.ВКМ_НачислениеФиксированныхПремий</content>
+  <content>CalculationRegister.ВКМ_ДополнительныеНачисления</content>
+  <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
+  <content>Document.ВКМ_ВыплатаЗарплаты</content>
+  <content>Document.ВКМ_ГрафикОтпусков</content>
+  <content>Role.ВКМ_КадровикРасчетчик</content>
+  <content>Report.ВКМ_ВыработкаСпециалистов</content>
+  <content>Report.ВКМ_РасчетыССотрудниками</content>
+  <content>Report.ВКМ_РасходЗапланированныхОтпусков</content>
+  <content>CommonModule.ВКМ_РасчетыИНачисления</content>
+  <content>CommandGroup.ВКМ_Регистры</content>
+  <content>CommandGroup.ВКМ_Данные</content>
+  <content>InformationRegister.ВКМ_ГрафикОтпусков</content>
+  <content>CalculationRegister.ВКМ_ОсновныеНачисления</content>
 </mdclass:Subsystem>

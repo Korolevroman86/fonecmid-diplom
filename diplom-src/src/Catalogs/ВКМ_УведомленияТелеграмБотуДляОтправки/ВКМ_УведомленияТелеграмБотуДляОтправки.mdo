@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="96de1dab-cd95-4412-ae49-ccf8edad1c99">
+  <producedTypes>
+    <objectType typeId="ac6864ea-0237-4374-bbf2-6866fe06b39c" valueTypeId="6a3da8e7-bb22-4ed1-8531-6855dd37ba08"/>
+    <refType typeId="a1d00a09-9863-4d0e-bc4e-38c59970efeb" valueTypeId="0528aeec-a4a8-40a1-b7b4-2476ee40b7bc"/>
+    <selectionType typeId="4e9146ba-6281-444c-add7-70c3657875b0" valueTypeId="84ef46c2-5e8b-4757-8862-133a239d7c78"/>
+    <listType typeId="8352fc1c-1a3e-4b42-a363-64d57c00ee07" valueTypeId="8c7619cc-6a79-45d6-8625-232379269e5f"/>
+    <managerType typeId="3aa4938f-36bd-43ad-9786-5c145e2df02f" valueTypeId="1d2e8f31-f5d2-49f4-b898-503466e9033a"/>
+  </producedTypes>
+  <name>ВКМ_УведомленияТелеграмБотуДляОтправки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Уведомления телеграм-боту для отправки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="fc7b8dc9-9cf3-4776-9372-4c3a4a9d2a0d">
+    <name>ТекстСообщения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст сообщения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>
